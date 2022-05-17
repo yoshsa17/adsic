@@ -25,7 +25,8 @@ void darray_insert(DArray *a, int index, int item);
 void darray_delete(DArray *a, int index); 
 void darray_prepend(DArray *a, int item);
 int darray_find(DArray *a, int item); 
-void darray_remove(DArray *a, int item); 
+void darray_remove(DArray *a, int item);
+void check_memory_allocation(void *p);
 
 //////// test ////////
 void run_all_test();

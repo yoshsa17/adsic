@@ -8,7 +8,9 @@
 DArray *darray_init(int initialCapacity) {
   // allocate a dynamicArray's size memory
   DArray *a = calloc(1, sizeof(DArray));
+  check_memory_allocation(a);
   a->data = calloc(initialCapacity, sizeof(int));
+  check_memory_allocation(a->data);
   a->used = 0;
   a->capacity = initialCapacity;
   return a;
@@ -45,6 +47,7 @@ bool darray_get_is_empty(DArray *a) {
 
 void darray_resize(DArray *a, int newCapacity) {
   int *new_data = realloc(a->data, a->capacity * sizeof(int));
+  check_memory_allocation(new_data);
   if(new_data == NULL) {
     exit(EXIT_FAILURE);
   } else {
@@ -134,6 +137,13 @@ void darray_remove(DArray *a, int item) {
   }
 
   darray_delete(a, index_of_item);
+}
+
+void check_memory_allocation(void *p) {
+  if(p == NULL) {
+    fprintf(stderr, "Unable to allocate memory");
+    exit(EXIT_FAILURE);
+  }
 }
 
 //////////////// test ////////////////  

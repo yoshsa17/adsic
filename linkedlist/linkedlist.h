@@ -1,5 +1,5 @@
-#ifndef ADSIC_ARRAY_H
-#define ADSIC_ARRAY_H
+#ifndef ADSIC_LINKEDLIST_H
+#define ADSIC_LINKEDLIST_H
 
 #include <assert.h>
 #include <stdbool.h>

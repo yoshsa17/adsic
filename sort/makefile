@@ -1,15 +1,15 @@
 SRCS=$(wildcard *.c)  
-OBJS=$(SRCS:.c=.o)
+OBJS=$(SRCS:.c=)
 
 merge:
-	gcc -o merge_sort.o merge_sort.c
-	./merge_sort.o
+	gcc -o merge_sort merge_sort.c
+	./merge_sort
 
 quick:
-	gcc -o quick_sort.o quick_sort.c
-	./quick_sort.o
+	gcc -o quick_sort quick_sort.c
+	./quick_sort
 
 clean:
-	rm -f $(OBJS) *.o *~ tmp* *.out
+	rm -f ${OBJS} *.o *~ tmp* *.out
 
 .PHONY: clean

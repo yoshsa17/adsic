@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+// Quick sort implementation
+
 void swap(int *a, int *b) {
   int tmp = *a;
   *a = *b;
@@ -27,11 +29,11 @@ int partition(int arr[], int lo, int hi) {
   int j = hi + 1;
 
   while (1) {
-    // find greater item than pivot
+    // find an item greater than pivot
     while (arr[++i] < arr[lo]) {
       if (hi < i) break;
     }
-    // find lesser item than pivot
+    // find an item less than pivot
     while (arr[lo] < arr[--j]) {
       if (j < lo) break;
     }
